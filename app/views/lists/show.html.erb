@@ -1,5 +1,9 @@
-<h1><%= @list.title %></h1>
-<h3><%= @list.description %></h3>
+<div class="container">
 
-<%= button_to "Edit", edit_list_path(@list), method: 'get' %>
-<%= button_to "Delete", list_path(@list), method: 'delete' %>
+  <h1 class="center-align"><%= @list.title %></h1>
+  <h3>List Description: <%= @list.description %></h3>
+  <div class="list_buttons">
+    <%= button_to "Edit", edit_list_path(@list), method: 'get', class: "btn btn-large" %>
+    <%= button_to "Delete", list_path(@list), method: 'delete', class: "btn btn-large red" %>
+  </div>
+</div>
