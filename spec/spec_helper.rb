@@ -1,9 +1,13 @@
 require 'simplecov'
 
-def create_new_list
-  List.create!(title: "Test List Title",
-               description: "A test List for testing")
-end
+  def create_new_list
+    List.create!(title: "Test List Title",
+                 description: "A test List for testing")
+  end
+
+  def set_status_to_complete(task)
+    task.update(status: true)
+  end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
