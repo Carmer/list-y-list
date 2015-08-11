@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find_by!(id: params[:id])
+    @tasks = @list.tasks
   end
 
   def new

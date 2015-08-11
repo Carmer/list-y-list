@@ -18,7 +18,7 @@ class Seed
     20.times do |i|
       p "task #{i} generated"
       Task.create!(title: Faker::App.name,
-                   notes: Faker::Lorem.sentences(3),
+                   notes: Faker::Lorem.sentence(3),
                    due_date: Faker::Date.forward(i + i),
                    start_date: Faker::Date.forward(i),
                    list_id: random_list_id)
@@ -29,7 +29,7 @@ class Seed
     5.times do |i|
       p "list #{i} generated"
       List.create!(title: Faker::Commerce.product_name,
-                   description: Faker::Lorem.sentences(3))
+                   description: Faker::Lorem.sentence(3))
     end
   end
 

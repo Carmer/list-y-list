@@ -15,4 +15,12 @@ class Task < ActiveRecord::Base
     errors.add(:due_date, "can't be before today") if
     !due_date.blank? && due_date < Date.today
   end
+
+  def completion_status
+    if status
+      "Complete"
+    else
+      "Incomplete"
+    end
+  end
 end

@@ -1,0 +1,11 @@
+<%= form_for @task do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title, class: "form-control" %>
+  <%= f.label "Notes" %>
+  <%= f.text_field :notes, class: "form-control" %>
+  <%= f.label "Start Date" %>
+  <%= f.date_field :start_date, class: "form-control" %>
+  <%= f.label "Due Date" %>
+  <%= f.date_field :due_date, class: "form-control" %>
+
+<% end %>
