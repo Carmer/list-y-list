@@ -1,4 +1,5 @@
 <%= form_for @task do |f| %>
+  <%= f.hidden_field :list_id, value: params[:list_id] %>
   <%= f.label "Title" %>
   <%= f.text_field :title, class: "form-control" %>
   <%= f.label "Notes" %>
@@ -7,5 +8,5 @@
   <%= f.date_field :start_date, class: "form-control" %>
   <%= f.label "Due Date" %>
   <%= f.date_field :due_date, class: "form-control" %>
-
+  <%= f.submit class: "btn" %>
 <% end %>
