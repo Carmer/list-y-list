@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  has_many :lists
+  belongs_to :lists
 
   validates :title, presence: true, length: { minimum: 1 }
   validate :start_date_cannot_be_in_the_past
