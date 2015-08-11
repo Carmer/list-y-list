@@ -1,0 +1,9 @@
+<%= button_to "Create New List", new_list_path, method: "get", class: "btn btn-large" %>
+
+<div>
+  <ul class="list_list">
+    <% @lists.each do |list| %>
+      <li><%= link_to list.title, list_path(list) %> - <%= list.description %></li>
+    <% end %>
+  </ul>
+</div>

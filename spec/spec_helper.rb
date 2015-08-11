@@ -1,5 +1,10 @@
 require 'simplecov'
 
+def create_new_list
+  List.create!(title: "Test List Title",
+               description: "A test List for testing")
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
