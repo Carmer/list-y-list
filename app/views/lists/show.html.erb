@@ -1,4 +1,5 @@
 <div class="list_buttons">
+  <h4>List Options</h4>
   <%= button_to "Edit", edit_list_path(@list), method: 'get', class: "btn " %>
   <%= button_to "Delete", list_path(@list), method: 'delete', class: "btn  red" %>
   <%= link_to "Create New Task", new_task_path(list_id: @list), class: "btn yellow" %>
