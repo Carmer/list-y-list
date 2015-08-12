@@ -9,4 +9,6 @@ $(function() {
   sortByDueDate();
   sortByStatus();
   sortByStartDate();
+  filterStartDateTasks();
+  filterDueDateTasks();
 });
