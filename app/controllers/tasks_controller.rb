@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @tasks.export_as_a_csv }
+    end
   end
 
   def show

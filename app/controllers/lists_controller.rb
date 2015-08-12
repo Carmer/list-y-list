@@ -2,6 +2,11 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @lists.export_as_a_csv }
+    end
   end
 
   def show

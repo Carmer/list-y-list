@@ -1,3 +1,5 @@
+require "csv"
+
 class Task < ActiveRecord::Base
 
   attr_accessor :attachment
@@ -62,6 +64,15 @@ class Task < ActiveRecord::Base
   def remove_attachment
     self.update(attachment: nil)
     self.save
+  end
+
+  def self.export_as_a_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |task|
+        csv << task.attributes.values_at(*column_names)
+      end
+    end
   end
 
   private
