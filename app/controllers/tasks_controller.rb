@@ -40,7 +40,7 @@ class TasksController < ApplicationController
   def js_update
     task = Task.find_by!(id: params[:id])
     task.status_update
-    redirect_to request.referrer
+    render nothing: true, status: 200, content_type: 'text/html'
   end
 
   private
