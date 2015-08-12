@@ -58,7 +58,6 @@ class TasksController < ApplicationController
     redirect_to request.referrer
   end
 
-
   private
 
     def task_params
