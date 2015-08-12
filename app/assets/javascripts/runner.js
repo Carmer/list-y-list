@@ -4,11 +4,12 @@ $(function() {
   completedEventsFilter();
   incompletedEventsFilter();
   futureEventsFilter();
-  searchEvents();
   sortByTitle();
   sortByDueDate();
   sortByStatus();
   sortByStartDate();
   filterStartDateTasks();
   filterDueDateTasks();
+  searchEvents();
+  clearInputs();
 });

@@ -15,5 +15,6 @@ var filterStartDateTasks = function() {
 
       })
     })
+    searchEvents();
   })
 }

@@ -14,5 +14,6 @@ var filterDueDateTasks = function() {
       }
       })
     })
+    searchEvents();
   })
 }

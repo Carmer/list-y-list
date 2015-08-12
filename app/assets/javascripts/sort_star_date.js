@@ -12,6 +12,9 @@ function sortByStartDate() {
       $(table).append($(this))
     })
     changeCompletedStatus();
+    filterStartDateTasks();
+    filterDueDateTasks();
+    
   })
 }
 

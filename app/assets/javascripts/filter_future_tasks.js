@@ -7,6 +7,9 @@ function futureEventsFilter() {
 
     showAllTableRows(tableRows);
     showFutureEvents(tableRows);
+    searchEvents();
+    filterStartDateTasks();
+    filterDueDateTasks();
   })
 
 }

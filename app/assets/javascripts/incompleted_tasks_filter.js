@@ -6,6 +6,9 @@ function incompletedEventsFilter() {
 
     showAllTableRows(tableRows);
     showIncompleteTasks(tableRows);
+    searchEvents();
+    filterStartDateTasks();
+    filterDueDateTasks();
   })
 
 }

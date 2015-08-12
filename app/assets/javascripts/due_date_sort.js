@@ -12,6 +12,7 @@ function sortByDueDate() {
       $(table).append($(this))
     })
     changeCompletedStatus();
+    searchEvents();
   })
 }
 

@@ -6,6 +6,9 @@ function completedEventsFilter() {
 
     showAllTableRows(tableRows);
     showCompleteTasks(tableRows);
+    searchEvents();
+    filterStartDateTasks();
+    filterDueDateTasks();
   })
 }
 

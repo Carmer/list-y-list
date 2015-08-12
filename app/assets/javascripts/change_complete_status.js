@@ -26,10 +26,12 @@ function updateStatusColumn(status) {
     $(this.children()[5]).html("<button type='button' class='btn yellow darken-2 task_complete' name='button'>Mark Incomplete</button>")
     $(this.children()[5]).css(".btn yellow")
     changeCompletedStatus();
+    searchEvents();
   } else {
     $(this.children()[4]).text("Incomplete")
     $(this.children()[5]).html("<button type='button' class='btn green task_complete' name='button'>Mark Complete</button>")
     $(this.children()[5]).css(".btn")
     changeCompletedStatus();
+    searchEvents();
   }
 }
