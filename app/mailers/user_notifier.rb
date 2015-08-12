@@ -1,5 +1,5 @@
 class UserNotifier < ActionMailer::Base
-  default :from => 'ajcarmer@gmail.com'
+  default :from => 'turing.pivot.group@gmail.com'
 
   def send_new_task_email(email_address, task)
     @email_address = email_address
