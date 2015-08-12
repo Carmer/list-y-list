@@ -12,7 +12,6 @@ var filterDueDateTasks = function() {
       else {
         $(this).removeClass("hidden")
       }
-
       })
     })
   })
