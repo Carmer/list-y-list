@@ -11,6 +11,7 @@ function sortByTitle() {
     $(ordered).each(function() {
       $(table).append($(this))
     })
+    changeCompletedStatus();
   })
 }
 

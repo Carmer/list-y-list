@@ -11,6 +11,7 @@ function sortByStartDate() {
     $(orderedDate).each(function() {
       $(table).append($(this))
     })
+    changeCompletedStatus();
   })
 }
 

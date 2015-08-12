@@ -11,6 +11,7 @@ function sortByDueDate() {
     $(orderedDate).each(function() {
       $(table).append($(this))
     })
+    changeCompletedStatus();
   })
 }
 
