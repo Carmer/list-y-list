@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.start
 
   def create_new_list
     List.create!(title: "Test List Title",

@@ -32,7 +32,34 @@ class Task < ActiveRecord::Base
     end
   end
 
+  def send_email_to_user_if_desired(task_title)
+    if wants_to_be_notified?(task_title)
+      email = retrieve_email_address(task_title)
+      UserNotifier.send_new_task_email(email, self)
+    end
+  end
+
+  def send_status_change_email
+    if wants_to_be_notified?(self.title)
+      email = retrieve_email_address(self.title)
+      UserNotifier.task_status_changed(email, self)
+    end
+  end
+
   private
+
+  def retrieve_email_address(title)
+    index_of_email = title_words(title).index("/cc") + 1
+    title_words(title)[index_of_email]
+  end
+
+  def title_words(title)
+    title.split(" ")
+  end
+
+  def wants_to_be_notified?(title)
+    title_words(title).include?("/cc")
+  end
 
   def set_start_date_and_due_date_if_none_specified
     self.update(start_date: Date.today ) if start_date.nil?
