@@ -1,4 +1,21 @@
 class Task < ActiveRecord::Base
+
+  attr_accessor :attachment_file_name,
+                :attachment_content_type
+
+  has_attached_file :attachment, styles: {micro: '50x50',
+                                          thumb: '100x100',
+                                          small: '200x200',
+                                          medium: '300x300'
+                                        }, default_url: "alpaca.jpg",
+                                        storage: :s3,
+                                        bucket: ENV['S3_BUCKET_NAME'],
+                                        s3_credentials: { access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                                        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] }
+
+  validates_attachment_content_type :attachment, content_type: ["attachment/jpg", "attachment/jpeg", "attachment/png"]
+
+
   belongs_to :list
 
   validates :title, presence: true, length: { minimum: 1 }
@@ -16,7 +33,7 @@ class Task < ActiveRecord::Base
   end
 
   def default_filter?
-    status || start_date <= Date.today
+    status || start_date < Date.today
   end
 
   def status_update

@@ -8,5 +8,7 @@
   <%= f.date_field :start_date, class: "form-control" %>
   <%= f.label "Due Date" %>
   <%= f.date_field :due_date, class: "form-control" %>
+  <%= f.label "Upload Attachment" %>
+  <%= f.file_field :attachment %>
   <%= f.submit class: "btn" %>
 <% end %>

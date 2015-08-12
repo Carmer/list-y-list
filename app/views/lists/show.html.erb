@@ -30,6 +30,7 @@
         <td>Due Date</td>
         <td>Status</td>
         <td>Change Status</td>
+        <td></td>
       </tr>
     </thead>
     <tbody class="task_list">
@@ -42,6 +43,7 @@
             <td><%= task.due_date %></td>
             <td><%= task.completion_status %></td>
             <td><button type="button" class="btn yellow darken-2 task_complete" name="button">Mark Incomplete</button></td>
+            <td><%= image_tag task.attachment.url(:micro) %></td>
           </tr>
         <% else %>
           <tr data-id="<%= task.id %>" data-status="<%= task.status %>" data-not-future-task="<%= task.not_in_the_future? %>">
@@ -51,6 +53,7 @@
             <td><%= task.due_date %></td>
             <td><%= task.completion_status %></td>
             <td><button type="button" class="btn green task_complete" name="button">Mark Complete</button></td>
+            <td><%= image_tag task.attachment.url(:micro) %></td>
           </tr>
         <% end %>
       <% end %>

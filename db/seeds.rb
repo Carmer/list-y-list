@@ -15,7 +15,7 @@ class Seed
   end
 
   def self.generate_tasks
-    20.times do |i|
+    200.times do |i|
       p "task #{i} generated"
       Task.create!(title: Faker::App.name,
                    notes: Faker::Lorem.sentence(3),
@@ -26,7 +26,7 @@ class Seed
   end
 
   def self.generate_lists
-    5.times do |i|
+    10.times do |i|
       p "list #{i} generated"
       List.create!(title: Faker::Commerce.product_name,
                    description: Faker::Lorem.sentence(3))
