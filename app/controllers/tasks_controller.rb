@@ -52,7 +52,6 @@ class TasksController < ApplicationController
   end
 
   def delete_attachment
-    binding.pry
     task = Task.find_by!(id: params[:id])
     task.remove_attachment
 
