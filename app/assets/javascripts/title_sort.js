@@ -2,18 +2,15 @@ function sortByTitle() {
   $(".sort_title").on("click", function() {
     var table = $(".task_list");
     var tableRows = $('tr', table);
+    var ordered = tableRows.sort(sortTitles);
 
     $(tableRows).each(function() {
       $(this).remove()
     })
 
-    var ordered = tableRows.sort(sortTitles);
-
     $(ordered).each(function() {
       $(table).append($(this))
     })
-
-
   })
 }
 

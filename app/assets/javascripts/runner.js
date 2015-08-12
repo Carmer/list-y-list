@@ -6,4 +6,5 @@ $(function() {
   futureEventsFilter();
   searchEvents();
   sortByTitle();
+  sortByDueDate();
 });

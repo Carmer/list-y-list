@@ -21,9 +21,17 @@
   </div>
   <h3>List Description: <%= @list.description %></h3>
   <table class="hoverable">
-    <tbody class="task_list">
+    <thead>
       <tr>
+        <td>Title</td>
+        <td>Notes</td>
+        <td>Start Date</td>
+        <td>Due Date</td>
+        <td>Status</td>
+        <td>Change Status</td>
       </tr>
+    </thead>
+    <tbody class="task_list">
       <% @tasks.each do |task| %>
         <% if task.default_filter? %>
           <tr class="hidden" data-id="<%= task.id %>" data-status="<%= task.status %>" data-not-future-task="<%= task.not_in_the_future? %>">
