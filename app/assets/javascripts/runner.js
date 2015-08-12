@@ -5,4 +5,5 @@ $(function() {
   incompletedEventsFilter();
   futureEventsFilter();
   searchEvents();
+  sortByTitle();
 });

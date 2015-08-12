@@ -13,16 +13,16 @@
     <button type="button" class="btn grey toggle_incompleted_tasks" name="button">Incompleted Tasks</button>
     <button type="button" class="btn grey toggle_future_tasks" name="button">Future Tasks</button>
   </div>
+  <div class="sort_buttons">
+    <h3>Sort Buttons</h3>
+    <button type="button" class="btn grey lighten-2 sort_title" name="button">Title</button>
+    <button type="button" class="btn grey lighten-2 sort_status" name="button">Status</button>
+    <button type="button" class="btn grey lighten-2 sort_due_date" name="button">Due Date</button>
+  </div>
   <h3>List Description: <%= @list.description %></h3>
   <table class="hoverable">
     <tbody class="task_list">
       <tr>
-        <td>Title</td>
-        <td>Notes</td>
-        <td>Start Date</td>
-        <td>Due Date</td>
-        <td>Status</td>
-        <td>Change Status</td>
       </tr>
       <% @tasks.each do |task| %>
         <% if task.default_filter? %>
