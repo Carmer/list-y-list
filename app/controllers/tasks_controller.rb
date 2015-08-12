@@ -46,11 +46,20 @@ class TasksController < ApplicationController
     render nothing: true, status: 200, content_type: 'text/html'
   end
 
+  def delete_attachment
+    binding.pry
+    task = Task.find_by!(id: params[:id])
+    task.remove_attachment
+
+    redirect_to request.referrer
+  end
+
+
   private
 
     def task_params
       params.require(:task).permit(:title,
-                                   :status, 
+                                   :status,
                                    :notes,
                                    :due_date,
                                    :start_date,

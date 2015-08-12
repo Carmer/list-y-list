@@ -59,6 +59,11 @@ class Task < ActiveRecord::Base
     end
   end
 
+  def remove_attachment
+    self.update(attachment: nil)
+    self.save
+  end
+
   private
 
   def retrieve_email_address(title)
