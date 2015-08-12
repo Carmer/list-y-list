@@ -40,6 +40,7 @@ class TasksController < ApplicationController
 
   def js_update
     task = Task.find_by!(id: params[:id])
+    task.status_update
     task.send_status_change_email
 
     render nothing: true, status: 200, content_type: 'text/html'
