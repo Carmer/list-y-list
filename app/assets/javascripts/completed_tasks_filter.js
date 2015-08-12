@@ -6,9 +6,7 @@ function completedEventsFilter() {
 
     showAllTableRows(tableRows);
     showCompleteTasks(tableRows);
-
   })
-
 }
 
 function showCompleteTasks(rows) {

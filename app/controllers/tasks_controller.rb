@@ -18,6 +18,7 @@ class TasksController < ApplicationController
   def create
     task = Task.create(task_params)
     if task.save
+      task.send_email_to_user_if_desired(params[:task][:title])
       flash[:success] = "Task Created"
       redirect_to list_path(task.list_id)
     else
@@ -39,8 +40,9 @@ class TasksController < ApplicationController
 
   def js_update
     task = Task.find_by!(id: params[:id])
-    task.status_update
-    redirect_to request.referrer
+    task.send_status_change_email
+
+    render nothing: true, status: 200, content_type: 'text/html'
   end
 
   private

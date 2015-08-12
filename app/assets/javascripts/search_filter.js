@@ -12,7 +12,6 @@ var searchEvents = function() {
         $(this).removeClass("hidden")
       }
     })
-
   })
 
 }
