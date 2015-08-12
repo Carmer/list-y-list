@@ -1,11 +1,11 @@
+<div class="list_buttons">
+  <%= button_to "Edit", edit_list_path(@list), method: 'get', class: "btn " %>
+  <%= button_to "Delete", list_path(@list), method: 'delete', class: "btn  red" %>
+  <%= link_to "Create New Task", new_task_path(list_id: @list), class: "btn yellow" %>
+</div>
 <div class="container">
   <h1 class="center-align"><%= @list.title %></h1>
   <h2 class="center-align black"><%= link_to "Back to All Lists", lists_path %></h2>
-  <div class="list_buttons">
-    <%= button_to "Edit", edit_list_path(@list), method: 'get', class: "btn " %>
-    <%= button_to "Delete", list_path(@list), method: 'delete', class: "btn  red" %>
-    <%= link_to "Create New Task", new_task_path(list_id: @list), class: "btn yellow" %>
-  </div>
   <div class="filter_buttons">
     <h3>Filter Buttons</h3>
     <button type="button" class="btn grey toggle_all_tasks" name="button">All Tasks</button>
@@ -18,6 +18,7 @@
     <button type="button" class="btn grey lighten-2 sort_title" name="button">Title</button>
     <button type="button" class="btn grey lighten-2 sort_status" name="button">Status</button>
     <button type="button" class="btn grey lighten-2 sort_due_date" name="button">Due Date</button>
+    <button type="button" class="btn grey lighten-2 sort_start_date" name="button">Start Date</button>
   </div>
   <h3>List Description: <%= @list.description %></h3>
   <table class="hoverable">

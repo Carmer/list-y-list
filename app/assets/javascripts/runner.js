@@ -7,4 +7,6 @@ $(function() {
   searchEvents();
   sortByTitle();
   sortByDueDate();
+  sortByStatus();
+  sortByStartDate();
 });

@@ -2,7 +2,7 @@ function sortByDueDate() {
   $(".sort_due_date").on("click", function() {
     var table = $(".task_list");
     var tableRows = $('tr', table);
-    var orderedDate = tableRows.sort(sortDates);
+    var orderedDate = tableRows.sort(sortDueDates);
 
     $(tableRows).each(function() {
       $(this).remove()
@@ -15,6 +15,6 @@ function sortByDueDate() {
 }
 
 
-function sortDates(a, b) {
+function sortDueDates(a, b) {
     return new Date($($(a).children()[3]).text()) - new Date($($(b).children()[3]).text());
   }
