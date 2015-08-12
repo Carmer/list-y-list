@@ -1,7 +1,7 @@
 <%= form_for @task, html: { :multipart => true } do |f| %>
   <%= f.hidden_field :list_id, value: params[:list_id] %>
   <%= f.label "Title" %>
-  <%= f.text_field :title, class: "form-control" %>
+  <%= f.text_field :title, class: "form-control", placeholder: "... Pro Tip: end the title with '/cc your_email@example.com' and you'll get email updates" %>
   <%= f.label "Notes" %>
   <%= f.text_field :notes, class: "form-control" %>
   <%= f.label "Start Date" %>

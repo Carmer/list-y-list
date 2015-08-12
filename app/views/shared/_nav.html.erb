@@ -1,14 +1,17 @@
 <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper black">
+        <a href="/lists" class="brand-logo center">List-y-List</a>
         <ul>
           <li class="col s6 container">
-            <div class="input-field nav-search-input row">
-              <label for="search_bar" class="s-12" id="searchlabel">Search Tasks</label>
-              <input id="search_bar" type="text" class="validate">
-            </div>
+
           </li>
         </ul>
       </div>
+        <ul id=" dropdown1" class="dropdown-content">
+          <li><%= link_to "Lists", lists_path %>HELLO</li>
+          <li class="divider"></li>
+          <li><%= link_to "All Tasks Ever", tasks_path %></li>
+        </ul>
     </nav>
   </div>
