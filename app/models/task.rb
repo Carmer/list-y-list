@@ -9,11 +9,12 @@ class Task < ActiveRecord::Base
                                           medium: '300x300'
                                         }, default_url: "alpaca.jpg",
                                         storage: :s3,
-                                        bucket: ENV['S3_BUCKET_NAME'],
-                                        s3_credentials: { access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-                                        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] }
+                                          bucket: ENV['S3_BUCKET_NAME'],
+                                        s3_credentials: {
+                                          access_key_id: ENV['AWSAccessKeyId'],
+                                          secret_access_key: ENV['AWSSecretKey'] }
 
-  validates_attachment_content_type :attachment, content_type: ["attachment/jpg", "attachment/jpeg", "attachment/png"]
+  validates_attachment_content_type :attachment, content_type: ["image/jpg", "image/jpeg", "image/png"]
 
 
   belongs_to :list

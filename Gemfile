@@ -14,6 +14,7 @@ gem 'awesome_print'
 gem 'materialize-sass'
 gem 'faker'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '~> 1.6'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'unicorn'
