@@ -4,4 +4,5 @@ $(function() {
   completedEventsFilter();
   incompletedEventsFilter();
   futureEventsFilter();
+  searchEvents();
 });

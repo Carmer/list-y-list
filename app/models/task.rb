@@ -19,6 +19,19 @@ class Task < ActiveRecord::Base
     status || start_date <= Date.today
   end
 
+  def status_update
+    new_status = !status
+    self.update(status: new_status)
+  end
+
+  def not_in_the_future?
+    if start_date > Date.today
+      false
+    else
+      true
+    end
+  end
+
   private
 
   def set_start_date_and_due_date_if_none_specified

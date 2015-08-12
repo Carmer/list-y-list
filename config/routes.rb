@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :lists
   resources :tasks
 
-
+  put "/task/:id/update", to: "tasks#js_update"
 end
