@@ -15,7 +15,7 @@ function completedEventsFilter() {
 function showCompleteTasks(rows) {
   for (var i = 0; i < rows.length; i++) {
     if (!($(rows[i]).data("status"))) {
-      $(rows[i]).toggle();
+      $(rows[i]).removeClass("hidden");
     }
   };
 }

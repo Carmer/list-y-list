@@ -17,7 +17,7 @@ function futureEventsFilter() {
 function showFutureEvents(rows) {
   for (var i = 0; i < rows.length; i++) {
     if ($(rows[i]).data("notFutureTask")) {
-      $(rows[i]).toggle();
+      $(rows[i]).removeClass("hidden");
     }
   };
 }
