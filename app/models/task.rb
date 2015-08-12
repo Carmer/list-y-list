@@ -1,20 +1,15 @@
 class Task < ActiveRecord::Base
 
-  attr_accessor :attachment_file_name,
-                :attachment_content_type
+  attr_accessor :attachment
 
-  has_attached_file :attachment, styles: {micro: '50x50',
-                                          thumb: '100x100',
-                                          small: '200x200',
-                                          medium: '300x300'
-                                        }, default_url: "alpaca.jpg",
-                                        storage: :s3,
-                                          bucket: ENV['S3_BUCKET_NAME'],
-                                        s3_credentials: {
-                                          access_key_id: ENV['AWSAccessKeyId'],
-                                          secret_access_key: ENV['AWSSecretKey'] }
+  has_attached_file :attachment, default_url: "alpaca.jpg",
+                                 storage: :s3,
+                                 s3_credentials: {
+                                   access_key_id: ENV['AWSAccessKeyId'],
+                                   bucket: ENV['S3_BUCKET_NAME'],
+                                   secret_access_key: ENV['AWSSecretKey'] }
 
-  validates_attachment_content_type :attachment, content_type: ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\Z/
 
 
   belongs_to :list

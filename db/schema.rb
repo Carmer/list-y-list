@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20150812062519) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.integer  "list_id"
-    t.string   "attachmnet_file_name"
-    t.string   "attachmnet_content_type"
-    t.integer  "attachmnet_file_size"
-    t.datetime "attachmnet_updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id", using: :btree

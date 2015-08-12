@@ -1,11 +1,11 @@
 class AddAttachmentAttachmnetToTasks < ActiveRecord::Migration
   def self.up
     change_table :tasks do |t|
-      t.attachment :attachmnet
+      t.attachment :attachment
     end
   end
 
   def self.down
-    remove_attachment :tasks, :attachmnet
+    remove_attachment :tasks, :attachment
   end
 end

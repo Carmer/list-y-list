@@ -1,4 +1,4 @@
-<%= form_for @task do |f| %>
+<%= form_for @task, html: { :multipart => true } do |f| %>
   <%= f.hidden_field :list_id, value: params[:list_id] %>
   <%= f.label "Title" %>
   <%= f.text_field :title, class: "form-control" %>

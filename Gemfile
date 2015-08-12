@@ -15,6 +15,7 @@ gem 'materialize-sass'
 gem 'faker'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '~> 1.6'
+gem 'figaro'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'unicorn'
