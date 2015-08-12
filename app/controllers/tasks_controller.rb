@@ -37,6 +37,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def js_update
+    task = Task.find_by!(id: params[:id])
+    task.status_update
+    redirect_to request.referrer
+  end
+
   private
 
     def task_params

@@ -1,14 +1,20 @@
 <div class="container">
-
   <h1 class="center-align"><%= @list.title %></h1>
   <div class="list_buttons">
     <%= button_to "Edit", edit_list_path(@list), method: 'get', class: "btn " %>
     <%= button_to "Delete", list_path(@list), method: 'delete', class: "btn  red" %>
     <%= link_to "Create New Task", new_task_path(list_id: @list), class: "btn yellow" %>
   </div>
+  <div class="filter_buttons">
+    <h3>Filter Buttons</h3>
+    <button type="button" class="btn grey toggle_all_tasks" name="button">All Tasks</button>
+    <button type="button" class="btn grey toggle_completed_tasks" name="button">Completed Tasks</button>
+    <button type="button" class="btn grey toggle_incompleted_tasks" name="button">Incompleted Tasks</button>
+    <button type="button" class="btn grey toggle_future_tasks" name="button">Future Tasks</button>
+  </div>
   <h3>List Description: <%= @list.description %></h3>
   <table class="hoverable">
-    <tbody>
+    <tbody class="task_list">
       <tr>
         <td>Title</td>
         <td>Notes</td>
@@ -18,20 +24,20 @@
       </tr>
       <% @tasks.each do |task| %>
         <% if task.default_filter? %>
-          <tr class="hidden">
+          <tr class="hidden" data-id="<%= task.id %>" data-status="<%= task.status %>" data-not-future-task="<%= task.not_in_the_future? %>">
             <td><%= link_to task.title, edit_task_path(task, list_id: @list) %></td>
             <td><%= task.notes %></td>
             <td><%= task.start_date %></td>
             <td><%= task.due_date %></td>
-            <td><%= task.completion_status %><%= button_to "Mark Completed", class: "btn green task_complete" %></td>
+            <td><%= task.completion_status %><button type="button" class="btn yellow darken-2 task_complete" name="button">Mark Incomplete</button></td>
           </tr>
         <% else %>
-          <tr>
+          <tr data-id="<%= task.id %>" data-status="<%= task.status %>" data-not-future-task="<%= task.not_in_the_future? %>">
             <td><%= link_to task.title, edit_task_path(task, list_id: @list) %></td>
             <td><%= task.notes %></td>
             <td><%= task.start_date %></td>
             <td><%= task.due_date %></td>
-            <td><%= task.completion_status %><%= button_to "Mark Completed", class: "btn green task_complete" %></td>
+            <td><%= task.completion_status %> <button type="button" class="btn green task_complete" name="button">Mark Complete</button></td>
           </tr>
         <% end %>
       <% end %>
