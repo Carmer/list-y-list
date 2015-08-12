@@ -50,14 +50,14 @@ class Task < ActiveRecord::Base
   def send_email_to_user_if_desired(task_title)
     if wants_to_be_notified?(task_title)
       email = retrieve_email_address(task_title)
-      UserNotifier.send_new_task_email(email, self)
+      UserNotifier.send_new_task_email(email, self).deliver
     end
   end
 
   def send_status_change_email
     if wants_to_be_notified?(self.title)
       email = retrieve_email_address(self.title)
-      UserNotifier.task_status_changed(email, self)
+      UserNotifier.task_status_changed(email, self).deliver
     end
   end
 
